@@ -7,44 +7,53 @@
     <!-- Fuentes de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #d81b60;
+            --primary-dark: #880e4f;
+            --accent-color: #ad1457;
+            --bg-gradient: linear-gradient(135deg, #fce4ec, #f8bbd0);
+        }
+
         body {
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            background: var(--bg-gradient);
             color: #4a4a4a;
             text-align: center;
         }
 
         header.hero {
             padding: 60px 20px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            backdrop-filter: blur(5px);
         }
 
         header.hero h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 4.5rem;
-            color: #d81b60;
+            color: var(--primary-color);
             margin: 0;
         }
 
         .subtitle {
             font-size: 1.3rem;
-            color: #880e4f;
+            color: var(--primary-dark);
             margin-top: 10px;
             font-weight: 600;
         }
 
         .date-badge {
             display: inline-block;
-            background: #ad1457;
+            background: var(--accent-color);
             color: white;
-            padding: 6px 16px;
+            padding: 6px 18px;
             border-radius: 20px;
             font-size: 0.95rem;
             margin-top: 15px;
             letter-spacing: 1px;
+            box-shadow: 0 3px 10px rgba(173, 20, 87, 0.3);
         }
 
         .content-box {
@@ -58,7 +67,7 @@
         }
 
         .content-box h2 {
-            color: #ad1457;
+            color: var(--accent-color);
             text-align: center;
             font-family: 'Great Vibes', cursive;
             font-size: 2.8rem;
@@ -73,36 +82,42 @@
         }
 
         .gallery-section {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 50px auto;
             padding: 0 20px;
         }
 
         .gallery-section h2 {
-            color: #ad1457;
+            color: var(--accent-color);
             font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
             margin-bottom: 30px;
         }
 
         .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
             justify-content: center;
-            gap: 25px;
         }
 
         .media-card {
             background: white;
-            padding: 15px;
+            padding: 12px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            width: 280px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .media-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         .media-card img, .media-card video {
@@ -110,22 +125,29 @@
             height: 220px;
             object-fit: cover;
             border-radius: 10px;
+            background-color: #f3f3f3;
         }
 
         .media-card p {
-            margin-top: 12px;
-            font-size: 0.95rem;
+            margin: 10px 0 5px 0;
+            font-size: 0.9rem;
             color: #666;
             text-align: center;
+            font-weight: 500;
         }
 
         footer {
-            padding: 30px 20px;
-            background: #880e4f;
+            padding: 40px 20px;
+            background: var(--primary-dark);
             color: white;
             font-size: 1rem;
             margin-top: 60px;
             line-height: 1.6;
+        }
+
+        /* Indicador de estado para imágenes no encontradas */
+        img:-moz-broken, img:broken {
+            opacity: 0.5;
         }
     </style>
 </head>
@@ -153,7 +175,7 @@
     <section class="content-box">
         <h2>Inseparables</h2>
         <p>
-            Pedro y Laura se volvieron inseparables desde aquella vez que cruzaron miradas, hasta ahora que se les cruzan los cables a los dos en ocasiones. Empezaron a conocerse y a descubrir todas y cada una de las facetas del otro: algunas buenas, otras malas, pero nunca dejaron de amaraje. Hubieron problemas, discusiones, rompimientos, desilusiones e incluso insultos, pero su amor jamás se apagaba; seguía siendo el mismo e incluso más fuerte, porque era verdadero amor.
+            Pedro y Laura se volvieron inseparables desde aquella vez que cruzaron miradas, hasta ahora que se les cruzan los cables a los dos en ocasiones. Empezaron a conocerse y a descubrir todas y cada una de las facetas del otro: algunas buenas, otras malas, pero nunca dejaron de amarse. Hubieron problemas, discusiones, rompimientos, desilusiones e incluso insultos, pero su amor jamás se apagaba; seguía siendo el mismo e incluso más fuerte, porque era verdadero amor.
         </p>
         <p>
             Y aunque en algunas ocasiones todo era problemas, ellos jamás se abandonaron. Cada obstáculo hacía más fuerte su relación. No todo era malo: salían, iban al cine, comían helado, veían películas, hacían hasta mercado juntos y charlaban de cómo iba a ser cuando se casaran y tuvieran su casita juntos. Su primera cita fue en el cine, un poco improvisada pero sin duda la mejor de todas (vieron <em>Moana</em> y la pasaron de maravilla). Compartían comida, hacían postres juntos (Laura los hacía y Pedro solo veía), bailaban, cantaban, y hasta decidieron el nombre de su primera hija, la cual se llamará <strong>Nabi</strong>. Desde entonces su visión ya no era solo un noviazgo, sino de una familia.
@@ -171,37 +193,30 @@
         </p>
     </section>
 
-    <!-- GALERÍA DE FOTOS Y RECUERDOS -->
+    <!-- SECCIÓN 1 DE FOTOS (FOTOS 1 A 40) -->
     <section class="gallery-section">
-        <h2>Nuestros Recuerdos Favoritos</h2>
-        <div class="gallery-grid">
-            
-            <!-- Foto 1 -->
-            <div class="media-card">
-                <img src="assets/foto1.jpg" alt="Momento juntos">
-                <p>De aquí al fondo del mar a brinquitos de medusa 🌊</p>
-            </div>
+        <h2>Galería de Recuerdos (Parte I)</h2>
+        <p class="section-desc">Nuestros primeros momentos inolvidables 📸</p>
+        <div class="gallery-grid" id="photo-gallery-1">
+            <!-- Las fotos 1 a 40 se cargan automáticamente desde JS -->
+        </div>
+    </section>
 
-            <!-- Foto 2 -->
-            <div class="media-card">
-                <img src="assets/foto2.jpg" alt="Paseo juntos">
-                <p>Caminando juntos hacia adelante 🤍</p>
-            </div>
+    <!-- SECCIÓN DE VIDEOS (9 VIDEOS) -->
+    <section class="gallery-section">
+        <h2>Nuestros Videos y Locuras</h2>
+        <p class="section-desc">Risas, bailes y momentos en movimiento 🎥</p>
+        <div class="gallery-grid" id="video-gallery">
+            <!-- Los 9 videos se cargan automáticamente desde JS -->
+        </div>
+    </section>
 
-            <!-- Foto 3 -->
-            <div class="media-card">
-                <img src="assets/foto3.jpg" alt="Aventura en el río">
-                <p>Nuestras aventuras y risas invaluables ✨</p>
-            </div>
-
-            <!-- Foto 4 -->
-            <div class="media-card">
-                <img src="assets/foto4.jpg" alt="Celebración de mes">
-                <p>Celebrando cada pasito de nuestro amor 🎂</p>
-            </div>
-
-            <!-- Puedes agregar más fotos o videos duplicando las tarjetas de arriba -->
-
+    <!-- SECCIÓN 2 DE FOTOS (FOTOS 41 A 81) -->
+    <section class="gallery-section">
+        <h2>Galería de Recuerdos (Parte II)</h2>
+        <p class="section-desc">Cada paso de nuestro camino juntos ✨</p>
+        <div class="gallery-grid" id="photo-gallery-2">
+            <!-- Las fotos 41 a 81 se cargan automáticamente desde JS -->
         </div>
     </section>
 
@@ -218,10 +233,54 @@
 
     <!-- PIE DE PÁGINA -->
     <footer>
-        <p>Te amo infinitamente de aquí al fondo del mar a brinquitos de medusa.</p>
+        <p>Te amo infinitamente de aquí al fondo del mar a brinquitos de medusa 🌊🪼</p>
         <p><strong>Solo podemos avanzar y crecer juntos. ¡Continuará...!</strong></p>
-        <p style="font-size: 0.85rem; margin-top: 15px; opacity: 0.8;">Hecho con todo mi amor para mi hermosa Mushu 💍❤️</p>
+        <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.8;">Hecho con todo mi amor para mi hermosa Mushu 💍❤️</p>
     </footer>
 
+    <!-- SCRIPT PARA GENERAR AUTOMÁTICAMENTE LAS 81 FOTOS Y 9 VIDEOS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const gallery1 = document.getElementById("photo-gallery-1");
+            const gallery2 = document.getElementById("photo-gallery-2");
+            const videoGallery = document.getElementById("video-gallery");
+
+            // Generar Fotos 1 a 40
+            for (let i = 1; i <= 40; i++) {
+                const card = document.createElement("div");
+                card.className = "media-card";
+                card.innerHTML = `
+                    <img src="assets/foto${i}.jpg" alt="Foto ${i}" loading="lazy">
+                    <p>Recuerdo #${i} ✨</p>
+                `;
+                gallery1.appendChild(card);
+            }
+
+            // Generar 9 Videos
+            for (let i = 1; i <= 9; i++) {
+                const card = document.createElement("div");
+                card.className = "media-card";
+                card.innerHTML = `
+                    <video controls preload="metadata">
+                        <source src="assets/video${i}.mp4" type="video/mp4">
+                        Tu navegador no soporta reproducción de video.
+                    </video>
+                    <p>Momentos en video #${i} 🎥</p>
+                `;
+                videoGallery.appendChild(card);
+            }
+
+            // Generar Fotos 41 a 81
+            for (let i = 41; i <= 81; i++) {
+                const card = document.createElement("div");
+                card.className = "media-card";
+                card.innerHTML = `
+                    <img src="assets/foto${i}.jpg" alt="Foto ${i}" loading="lazy">
+                    <p>Recuerdo #${i} ✨</p>
+                `;
+                gallery2.appendChild(card);
+            }
+        });
+    </script>
 </body>
 </html>
